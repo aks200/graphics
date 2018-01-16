@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+    <head>
+
+            <title>canvas</title>
+    </head>
+
+    <body>
+        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+            </canvas>
+        
+        <canvas id="myCanvas1" width="200" height="100" style="border:1px solid #000000;">
+            </canvas>
+    
+        <canvas id="myCanvas2" width="200" height="100" style="border:1px solid #000000;">
+            </canvas>
+        
+        <canvas id="myCanvas3" width="200" height="100" style="border:1px solid #000000;">
+            </canvas>
+
+            <p>Image to use:</p>
+            <img id="scream" src="1.jpg" alt="The Scream" width="100" height="200">
+            
+            <p>Canvas to fill:</p>
+            <canvas id="myCanvas4" width="500" height="300"
+            style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML5 canvas tag.</canvas>
+            
+            <p><button onclick="myCanvas4()">Try it</button></p>
+            
+
+        <script>
+            var c=document.getElementById("myCanvas");
+            var ct=c.getContext("2d");
+            ct.moveTo(0,0);
+            ct.lineTo(200,100);
+            ct.stroke();
+            ct.fillStyle="green";
+            ct.fill();
+        
+            var c1=document.getElementById("myCanvas1");
+            var ct1=c1.getContext("2d");
+            ct1.beginPath();
+            ct1.arc(100,50,30,0,2*Math.PI);
+            ct1.stroke();
+
+            var c2=document.getElementById("myCanvas2");
+            var ct2=c2.getContext("2d");
+            ct2.font="20px Arial";
+            ct2.fillText("hi akshaya",10,50);
+           
+
+            var c3=document.getElementById("myCanvas3");
+            var ct3=c3.getContext("2d");
+            ct3.font="20px ArialBlack";
+            ct3.strokeText("hi akshaya",10,50);
+            ct3.moveTo(0,0);
+            ct3.lineTo(200,100);
+            ct3.stroke();
+
+
+            function myCanvas4() {
+            var c4 = document.getElementById("myCanvas4");
+            var ctx4 = c4.getContext("2d");
+            var img = document.getElementById("scream");
+            ctx4.drawImage(img,30,30);
+}
+        </script>
+    </body>
+</html> 
